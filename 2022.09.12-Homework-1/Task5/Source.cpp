@@ -5,5 +5,4 @@ int main(int argc, char* argv[]) {
 	std::cin >> n;
 	std::cout << n / 100 + n % 100 / 10 + n % 100 % 10 << std::endl;
 	return EXIT_SUCCESS;
-
 }
