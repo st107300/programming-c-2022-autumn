@@ -8,7 +8,7 @@ int main(int argc, char* argv[])
 	{
 		std::cout << x - 1 << " " << y << std::endl;
 	}
-	if (x < n)
+	if (x < m)
 	{
 		std::cout << x + 1 << " " << y << std::endl;
 	}
@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 	{
 		std::cout << x << " " << y - 1 << std::endl;
 	}
-	if (y < m)
+	if (y < n)
 	{
 		std::cout << x << " " << y + 1 << std::endl;
 	}
