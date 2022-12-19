@@ -8,9 +8,15 @@ int main(int argc, char* argv[]) {
     for (i = 0; i < n; i++) {
         std::cin >> x;
         a[i] = x;
-        if (a[i] > 0) k = k + a[i];
-        if (a[i] > mx) mx = a[i], imx = i;
-        if (a[i] < mn) mn = a[i], imn = i;
+        if (a[i] > 0) {
+            k = k + a[i];
+        }
+        if (a[i] > mx) {
+            mx = a[i], imx = i;
+        }
+        if (a[i] < mn) {
+            mn = a[i], imn = i;
+        }
     }
     if (imx > imn) {
         for (i = imn + 1;i < imx;i++) {

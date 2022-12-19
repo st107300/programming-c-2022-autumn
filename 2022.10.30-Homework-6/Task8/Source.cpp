@@ -1,33 +1,34 @@
 #include<iostream>
 
 int main(int argc, char* argv[]) {
-    int a[100] = { 0 };
-    int b[100] = { 0 };
-    int n = 0, k = 0, x = 0, i = 0, j = 0, g = 0, m = 0, res = 1;
+    int n = 0;
+    int a[10000]{ 0 };
+    int b[10000]{ 0 };
+    int maxind = 0;
+    int sum = 0;
+    int oldind = 0;
+    int max = 0;
+    int i = 0;
+    int len = 1;
     std::cin >> n;
     for (i = 0; i < n; i++) {
         std::cin >> a[i];
     }
-    std::cin >> k;
-    if (k > 0) {
-        for (i = (k - 1); i < n; i++) {
-            b[i - k + 1] = a[i];
+    max = a[0];
+    while (oldind != n - 1) {
+        for (i = oldind + 1;i < n; i++) {
+            if (a[i]> max) {
+                max = a[i];
+                maxind = i;
+            }
         }
-        for (i = 0; i < (k - 1); i++) {
-            b[i + k] = a[i];
-        }
+        len += maxind - oldind;
+        sum += len * max;
+        oldind = maxind;
+        len = 0;
+        max = 0;
+
     }
-    else {
-        x = abs(k);
-        for (i = 0; i < (k - 1); i++) {
-            b[i - k + 1] = a[i];
-        }
-        for (i = (k - 1); i < n; i++) {
-            b[i + k] = a[i];
-        }
-    }
-    for (i = 0; i < n; i++) {
-        std::cout << b[i] << " ";
-    }
+    std::cout << sum;
     return EXIT_SUCCESS;
 }
